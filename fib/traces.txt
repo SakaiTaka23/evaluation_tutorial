@@ -1,15 +1,15 @@
 {
 	"Name": "Fibonacci",
 	"SpanContext": {
-		"TraceID": "4ac0d33debfe001c220e72717cc4155d",
-		"SpanID": "8ca318f7998fd67a",
+		"TraceID": "df054ea11f5b016e2a399b6680b7270f",
+		"SpanID": "e3fa2e8d92bbfe85",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
 	},
 	"Parent": {
-		"TraceID": "4ac0d33debfe001c220e72717cc4155d",
-		"SpanID": "eb615465bf7849bd",
+		"TraceID": "df054ea11f5b016e2a399b6680b7270f",
+		"SpanID": "0c7b00c8b35d1355",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -18,11 +18,33 @@
 	"StartTime": "0001-01-01T00:00:00Z",
 	"EndTime": "0001-01-01T00:00:00Z",
 	"Attributes": null,
-	"Events": null,
+	"Events": [
+		{
+			"Name": "exception",
+			"Attributes": [
+				{
+					"Key": "exception.type",
+					"Value": {
+						"Type": "STRING",
+						"Value": "*errors.errorString"
+					}
+				},
+				{
+					"Key": "exception.message",
+					"Value": {
+						"Type": "STRING",
+						"Value": "unsupported fibonacci number 100: too large"
+					}
+				}
+			],
+			"DroppedAttributeCount": 0,
+			"Time": "0001-01-01T00:00:00Z"
+		}
+	],
 	"Links": null,
 	"Status": {
-		"Code": "Unset",
-		"Description": ""
+		"Code": "Error",
+		"Description": "unsupported fibonacci number 100: too large"
 	},
 	"DroppedAttributes": 0,
 	"DroppedEvents": 0,
@@ -38,15 +60,15 @@
 {
 	"Name": "Write",
 	"SpanContext": {
-		"TraceID": "4ac0d33debfe001c220e72717cc4155d",
-		"SpanID": "eb615465bf7849bd",
+		"TraceID": "df054ea11f5b016e2a399b6680b7270f",
+		"SpanID": "0c7b00c8b35d1355",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
 	},
 	"Parent": {
-		"TraceID": "4ac0d33debfe001c220e72717cc4155d",
-		"SpanID": "03bcdf3406efd363",
+		"TraceID": "df054ea11f5b016e2a399b6680b7270f",
+		"SpanID": "433d6c078641ca04",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
@@ -75,8 +97,8 @@
 {
 	"Name": "Run",
 	"SpanContext": {
-		"TraceID": "4ac0d33debfe001c220e72717cc4155d",
-		"SpanID": "03bcdf3406efd363",
+		"TraceID": "df054ea11f5b016e2a399b6680b7270f",
+		"SpanID": "433d6c078641ca04",
 		"TraceFlags": "01",
 		"TraceState": "",
 		"Remote": false
