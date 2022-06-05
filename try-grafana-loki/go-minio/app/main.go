@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	logger, _ := zap.NewDevelopment()
+	logger, _ := zap.NewProduction()
 
 	for {
 		switch i := rand.Intn(4); i {
 		case 0:
-			logger.Debug("Info Level Message", zap.String("file", "main.go"))
+			logger.Debug("Debug Level Message", zap.String("file", "main.go"))
 		case 1:
 			logger.Info("Info Level Message", zap.String("file", "main.go"))
 		case 2:
