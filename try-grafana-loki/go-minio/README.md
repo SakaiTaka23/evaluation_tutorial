@@ -1,17 +1,12 @@
-- GETメソッドの一覧取得
+- ログレベルごとの取得
 
 ```
-{job="containerlogs",stream="stdout"} |= "method=GET"
+sum by (level) (count_over_time({filename="/var/lib/docker/containers/a19d833869cb41ced627dd42ceac2cddf0b9ef1f138b3287815fda811455346d/a19d833869cb41ced627dd42ceac2cddf0b9ef1f138b3287815fda811455346d-json.log"} | json[1m]))
 ```
 
+- ログのJSON出力
 ```
-sum(count_over_time({job="containerlogs", stream="stdout"}[1m])) by (method)
-sum by (method) (rate({job="containerlogs", stream="stdout"}[1m]))
-```
-
-- メソッドごとのレート
-```
-sum by (method) (rate({job="containerlogs", stream="stdout"} | json | __error__=""[1m]))
+{filename="/var/lib/docker/containers/a19d833869cb41ced627dd42ceac2cddf0b9ef1f138b3287815fda811455346d/a19d833869cb41ced627dd42ceac2cddf0b9ef1f138b3287815fda811455346d-json.log"} | json
 ```
 
 - フォーマット
