@@ -10,8 +10,6 @@ clients:
 
 scrape_configs:
 - job_name: containers
-  entry_parser: raw
-
   static_configs:
   - targets:
       - localhost
