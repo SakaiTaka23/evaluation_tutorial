@@ -13,3 +13,8 @@ sum by (method) (rate({job="containerlogs", stream="stdout"}[1m]))
 ```
 sum by (method) (rate({job="containerlogs", stream="stdout"} | json | __error__=""[1m]))
 ```
+
+- フォーマット
+```
+{job="containerlogs",stream="stdout"} |= "host" | json | line_format "{{.host}} {{.method}} {{.status}}"
+```
