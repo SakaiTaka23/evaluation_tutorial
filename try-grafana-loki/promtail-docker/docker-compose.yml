@@ -25,4 +25,9 @@ services:
 
   flog:
     image: mingrammer/flog
+    container_name: flog
     command: -f json -d 10s -l
+    logging:
+      driver: json-file
+      options:
+        tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
