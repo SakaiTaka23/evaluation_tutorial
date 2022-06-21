@@ -26,3 +26,7 @@ sum by (method) (rate({job="containerlogs", stream="stdout"} | json | __error__=
 ```
 {{method}}
 ```
+
+# Grafanaデータ永続化
+- grafana.dbに全て入ってそう
+
