@@ -18,3 +18,11 @@ sum by (method) (rate({job="containerlogs", stream="stdout"} | json | __error__=
 ```
 {job="containerlogs",stream="stdout"} |= "host" | json | line_format "{{.host}} {{.method}} {{.status}}"
 ```
+
+## レジェンド周りの設定
+- 「.」はいらさなそう
+
+例
+```
+{{method}}
+```
