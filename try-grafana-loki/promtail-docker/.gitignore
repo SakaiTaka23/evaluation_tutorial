@@ -1,1 +1,2 @@
-var
+var/grafana/grafana_data/*
+!var/grafana/grafana_data/grafana.db
