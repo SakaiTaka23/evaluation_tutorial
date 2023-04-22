@@ -7,10 +7,15 @@ import { HttpInstrumentation } from '@opentelemetry/instrumentation-http';
 import { ExpressInstrumentation } from '@opentelemetry/instrumentation-express';
 import * as process from 'process';
 import { NestInstrumentation } from '@opentelemetry/instrumentation-nestjs-core';
+import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
+import { Resource } from '@opentelemetry/resources';
 
 const traceExporter = new ConsoleSpanExporter();
 
 export const otelSDK = new NodeSDK({
+  resource: new Resource({
+    [SemanticResourceAttributes.SERVICE_NAME]: 'nestjs-otel',
+  }),
   spanProcessor: new SimpleSpanProcessor(traceExporter),
   instrumentations: [
     new HttpInstrumentation(),
